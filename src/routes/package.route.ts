@@ -15,10 +15,10 @@ router.get("/", (_: Request, res: Response) => {
 });
 
 router.get("/all-packages", VerifyAccessTokenMiddleware, GetPackagesController);
-router.get("/create-package", VerifyAccessTokenMiddleware, CreatePackageController);
-router.get("/update-package", VerifyAccessTokenMiddleware, UpdatePackageController);
+router.post("/create-package", VerifyAccessTokenMiddleware, CreatePackageController);
+router.post("/update-package", VerifyAccessTokenMiddleware, UpdatePackageController);
 router.get("/current-package", VerifyAccessTokenMiddleware, GetCurrentPackageController);
-router.get("/create-payment", VerifyAccessTokenMiddleware, CreateCheckoutSessionController);
+router.post("/create-payment", VerifyAccessTokenMiddleware, CreateCheckoutSessionController);
 router.get("/verify-payment-enable-package", VerifyAccessTokenMiddleware, VerifyCheckoutSessionController);
 
 
